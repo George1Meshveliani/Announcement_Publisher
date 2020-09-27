@@ -2,7 +2,16 @@
 <html>
 <link rel="stylesheet" href="HeaderDesign.css">
 
-<?php require_once 'layout/header.php' ?>
+<?php 
+
+require_once 'layout/header.php';
+require_once 'addProfileConfig.php';
+require_once 'addAnnConfig.php';
+
+
+?>
+
+
   
  
 

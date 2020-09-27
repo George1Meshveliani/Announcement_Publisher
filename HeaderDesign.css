@@ -1,5 +1,7 @@
 * {box-sizing: border-box;}
-
+html {
+  scroll-behavior: smooth;
+}
 body { 
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -9,15 +11,25 @@ body {
     text-align: center;
 }
 
-.header {
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+
+.sticky + .content {
+  padding-top: 102px;
+}
+#header {
   overflow: hidden;
-  background-color: rgba(80, 155, 216, 0.6);
+  background-color: rgba(217, 229, 240, 0.6);
   padding: 15px 10px;
 }
 
-.header a {
+#header a {
   float: left;
-  color: black;
+  color: blue;
   text-align: center;
   padding: 12px;
   text-decoration: none;
@@ -28,8 +40,8 @@ body {
 
 
 
-.header a:hover {
-  background-color: rgba(173, 214, 37, 0.6);
+#header a:hover {
+  background-color: rgba(211, 211, 211, 0.6);
   color: black;
 }
 

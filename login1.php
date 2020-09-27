@@ -7,7 +7,7 @@
 
 // Initialize the session
 session_start();
-require_once 'layout/header.php';
+ require_once 'layout/header.php' ;
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
@@ -101,17 +101,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="HeaderDesign.css">
+   
     <link rel="stylesheet" href="form.css">
-    
+   
 </head>
 <body>
+
 <section class="background">
+
     <div class="wrapper">
+    
+ 
+
+    
         <h2>Login</h2>
         <p>Please fill in your credentials to login.</p>
         <form class="generalFom" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+        <link rel="stylesheet" href="HeaderDesign.css">    
+        <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Username</label>
                 <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
                 <span class="help-block"><?php echo $username_err; ?></span>
@@ -126,7 +133,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
         </form>
-    </div>  
+        </div>
+      
+
     </section>  
 </body>
 </html>

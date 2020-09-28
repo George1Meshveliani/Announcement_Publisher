@@ -10,8 +10,8 @@
 <nav class="navbar sticky-top" id="header" >
   <div class="header-right">
   
-    <a href="welcome.php">Home</a>
-    <a class="active" href="profile.php">Profile</a>
+    <a href="welcome.php">Profile</a>
+    <a class="active" href="profile.php">Home</a>
     <a href="register.php">Create New Accountt</a>
     <a href="login1.php">LogIn</a>
     <a href="logout1.php">LogOut</a>

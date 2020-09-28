@@ -20,5 +20,6 @@ require_once 'addAnnConfig.php';
   <div class=ann>check again</div>
   <div class=ann>teamwork medium is ready </div>
   <div class=ann>teamwork medium is ready again </div>
+  <div class=ann>teamwork medium is ready again for anri </div>
 
 </html>

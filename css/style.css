@@ -7,10 +7,40 @@ html {
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
+
+.button1 {
+  text-align: center;
+  margin-top: 10px;
+  margin-inline-end: 3px;
+}
+
+.buttin1 button {
+  color: white;
+}
+
+#submit {
+  background-color: white;
+  border-radius: 12px;
+  margin: 3px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: italic;
+  text-shadow: rgb(255, 2, 2);
+  text-emphasis-color: white;
+
+}
+
+.input-textarea {
+  min-height: 120px;
+  width: 100%;
+  padding: 0.625rem;
+  resize: vertical;
+}
+
 body {
-  background: rgb(160, 154, 154)
-    url('https://previews.123rf.com/images/korolyok/korolyok1803/korolyok180300133/98408508-old-grunge-newspaper-paper-texture-background-blurred-vintage-newspaper-background-aged-blur-paper-t.jpg')
+  background: rgba(1, 0, 2, 0.5)
+    url("https://www.ma-assessors.com/wp-content/uploads/2016/02/corporate-buildings-white-1.jpg")
     no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -19,10 +49,11 @@ body {
   /* height: 200%; */
   /* text-align: center; */
   align-items: center;
+  
 }
 
 .wrapper {
-  background-color: rgba(224, 241, 245, 0.26);
+  background-color:rgba(30, 143, 255, 0.438);
   width: 500px;
   margin: 50px auto;
   border-radius: 12px;
@@ -76,7 +107,7 @@ body {
   text-align: center;
 }
 .page-header {
-  background-color: rgba(224, 241, 245, 0.26);
+  background-color: rgba(220, 236, 240, 0.7);
   border-radius: 12px;
 }
 
@@ -103,6 +134,17 @@ form:before {
 }
 .check > input {
   cursor: pointer;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+
+.sticky + .content {
+  padding-top: 102px;
 }
 button,
 select,

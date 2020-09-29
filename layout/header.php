@@ -12,7 +12,7 @@
     } else {
       echo '<a href="index.php">Home</a>
            <div class="navbar-right">
-            <a href="addAnnConfig.php">add announcenment</a>
+            <a href="addAnnConfig.php">Add announcenment</a>
             <a href="login.php">LogIn</a>
             <a href="register.php">Signup</a>
            </div>';

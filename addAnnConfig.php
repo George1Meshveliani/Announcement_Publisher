@@ -77,6 +77,7 @@ $current_user = array_values(array_filter($current_user));
 </main>
 <?php require_once "layout/footer.php"  ?>
 
+
 </body>
 
 </html>

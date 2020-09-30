@@ -48,7 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (mysqli_stmt_execute($stmt)) {
                 // Store result
                 mysqli_stmt_store_result($stmt);
-
                 // Check if username exists, if yes then verify password
                 if (mysqli_stmt_num_rows($stmt) > 0) {
                     // Bind result variables
@@ -70,8 +69,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 $expires = time() + 1;
                                 setcookie("PHTARM", $_SESSION["id"], $expires, "/");
                             }
-                            // Redirect user to welcome page
-                            header("location: index.php");
+                            // Redirect user to profile page
+                            header("location: profile.php");
                         } else {
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";
@@ -136,7 +135,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </main>
     <?php require_once "layout/footer.php" ?>
-
 </body>
 
 </html>

@@ -1,21 +1,20 @@
 <?php
 
 
-require_once "layout/header.php"; 
- require_once "server/userData.php";
- require_once "server/config.php";
+require_once "server/userData.php";
+require_once "server/config.php";
 //This page is ready to give user opportunity to make announcements and publish it to homepage
 session_start();
-// check id user is logged in
+// check if user is logged in
 if (isset($_COOKIE["PHTARM"])) {
 } elseif (!isset($_SESSION["loggedin"])) {
-    header("Location:login.php");
+  header("Location:login.php");
 }
 
 $current_user = array_filter($user_data, function ($var) {
-    return ($var["id"] === $_COOKIE["PHTARM"] || $var["id"] == $_SESSION["id"]);
-  });
-  $current_user = array_values(array_filter($current_user));
+  return ($var["id"] === $_COOKIE["PHTARM"] || $var["id"] == $_SESSION["id"]);
+});
+$current_user = array_values(array_filter($current_user));
 ?>
 
 
@@ -25,47 +24,32 @@ $current_user = array_filter($user_data, function ($var) {
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
 </head>
-
-              
-            </form>
-        </div>
-    </main>
-    <?php require_once "layout/footer.php" ?>
 </body>
-
-
-<body>
-    <?php require_once "layout/header.php"  ?>
-    <main class="main-container">
-        <h1>announcenment page</h1>
-        <h6>Hello, <?php echo $current_user[0]["fullname"]  ?> 
-        You can create and publich an announcement here</h6>
-<div class="wrapper">
-        <div>
-  <header class="header">
-    <h1 id="title" class="text-center">Make an announcement</h1>
-        </header>
-        <form class="generalFom">
-            <div class="form-group">
-            <label id="name-label" for="name">Title</label>
-            <input
-                type="text"
-                name="name"
-                id="name"
-                class="form-control"
-                required
-            />
-            </div>
-   
+<?php require_once "layout/header.php"  ?>
+<main class="main-container">
+  <h1>announcenment page</h1>
+  <h6>Hello, <?php echo $current_user[0]["fullname"]  ?>
+    You can create and publich an announcement here</h6>
+  <div class="wrapper">
+    <div>
+      <header class="header">
+        <h1 id="title" class="text-center">Make an announcement</h1>
+      </header>
+      <form class="generalFom">
+        <div class="form-group">
+          <label id="name-label" for="name">Title</label>
+          <input type="text" name="name" id="name" class="form-control" required />
+        </div>
+      </form>
     </div>
-   
-    <div class="generalFom" >
+
+    <div class="generalFom">
       <p>რას საქმიანობთ?</p>
       <select id="dropdown" name="role" class="form-control" required>
         <option value="teacher">Teacher</option>
@@ -74,26 +58,24 @@ $current_user = array_filter($user_data, function ($var) {
       </select>
     </div>
 
-    
-    <div class="generalFom" >
+
+    <div class="generalFom">
       <p required>Write your announcement</p>
-      <textarea
-        class="input-textarea"
-      ></textarea>
+      <textarea class="input-textarea"></textarea>
     </div>
 
-    <div class="button1" >
+    <div class="button1">
       <button type="submit" id="submit" class="submit-button">
         Publish
       </button>
     </div>
-  </form>
-</div>
-</div>
+    </form>
+  </div>
+  </div>
 
 
-    </main>
-    <?php require_once "layout/footer.php"  ?>
+</main>
+<?php require_once "layout/footer.php"  ?>
 
 </body>
 

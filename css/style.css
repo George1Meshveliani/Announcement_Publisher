@@ -28,7 +28,6 @@ body {
   font-style: italic;
   text-shadow: rgb(255, 2, 2);
   text-emphasis-color: white;
-
 }
 
 .input-textarea {
@@ -40,7 +39,7 @@ body {
 
 body {
   background: rgba(1, 0, 2, 0.5)
-    url("https://www.ma-assessors.com/wp-content/uploads/2016/02/corporate-buildings-white-1.jpg")
+    url('https://www.ma-assessors.com/wp-content/uploads/2016/02/corporate-buildings-white-1.jpg')
     no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -49,11 +48,10 @@ body {
   /* height: 200%; */
   /* text-align: center; */
   align-items: center;
-  
 }
 
 .wrapper {
-  background-color:rgba(30, 143, 255, 0.438);
+  background-color: rgba(30, 143, 255, 0.438);
   width: 500px;
   margin: 50px auto;
   border-radius: 12px;
@@ -139,9 +137,8 @@ form:before {
 .sticky {
   position: fixed;
   top: 0;
-  width: 100%
+  width: 100%;
 }
-
 
 .sticky + .content {
   padding-top: 102px;
@@ -182,6 +179,13 @@ button {
   box-shadow: 1px 2px 9px -1px rgba(0, 0, 0, 0.75);
   width: 60%;
   text-align: center;
+}
+/* card */
+.card-body {
+  background-color: rgba(220, 236, 240, 0.7);
+}
+.card-body a {
+  color: blue;
 }
 /* ERROR MESSAGES */
 .help-block {

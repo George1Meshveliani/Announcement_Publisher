@@ -104,7 +104,8 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
 
 <head>
     <meta charset="UTF-8">
-    <title>Update Record</title>
+    <title>Update</title>
+    <link rel="icon" type="image/png" href="https://freepngimg.com/download/newspaper/6-2-newspaper-png-clipart.png" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
 </head>

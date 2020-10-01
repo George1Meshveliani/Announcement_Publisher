@@ -44,6 +44,7 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
 <head>
     <meta charset="UTF-8">
     <title>View Record</title>
+    <link rel="icon" type="image/png" href="https://freepngimg.com/download/newspaper/6-2-newspaper-png-clipart.png" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
 </head>

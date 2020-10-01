@@ -29,6 +29,16 @@ function setColor(input, color, time) {
   setTimeout(() => (input.style.color = color), time);
 }
 
+// responsive navbar
+function myFunction() {
+  const nav = document.querySelector('.topnav');
+  if (nav.className === 'navbar sticky-top topnav') {
+    nav.className += ' responsive';
+  } else {
+    nav.className = 'navbar sticky-top topnav';
+  }
+}
+// jquery
 $(document).ready(function () {
   $('[data-toggle="tooltip"]').tooltip();
 });

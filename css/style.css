@@ -213,6 +213,17 @@ footer {
   display: none;
 }
 /* MEDIA  */
+@media screen and (max-width: 950px) {
+  .main-container {
+    width: 98%;
+  }
+  .res {
+    width: 700px;
+  }
+  .wrapper-form {
+    width: 450px;
+  }
+}
 @media screen and (max-width: 680px) {
   .navbar-right a {
     display: none;
@@ -239,5 +250,14 @@ footer {
     float: none;
     display: block;
     text-align: left;
+  }
+  .main-container {
+    width: 98%;
+  }
+  .res {
+    width: 600px;
+  }
+  .wrapper-form {
+    width: 350px;
   }
 }

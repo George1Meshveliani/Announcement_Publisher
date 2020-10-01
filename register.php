@@ -133,7 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <?php require_once 'layout/header.php'; ?>
     <main class="main-container">
-        <div class="wrapper">
+        <div class="wrapper wrapper-form">
             <div class="form-title">
                 <h2>Sign Up</h2>
                 <p>Please fill this form to create an account.</p>

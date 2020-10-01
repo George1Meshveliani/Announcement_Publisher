@@ -48,7 +48,7 @@ $userRow = mysqli_fetch_array($result);
         </form> -->
       </div>
 
-      <div class="wrapper wraper-profile">
+      <div class="wrapper wraper-profile res">
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">

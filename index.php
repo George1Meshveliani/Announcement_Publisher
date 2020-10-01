@@ -26,7 +26,7 @@ if (isset($_COOKIE["PHTARM"])) {
 <body>
     <?php require_once 'layout/header.php'; ?>
     <main class="main-container">
-        <div class="wrapper wraper-table">
+        <div class="wrapper wraper-table res">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">

@@ -93,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <?php require_once 'layout/header.php'; ?>
     <main class="main-container">
-        <div class="wrapper">
+        <div class="wrapper wrapper-form">
             <div class="form-title">
                 <h2>Login</h2>
                 <p>Please fill in your credentials to login.</p>

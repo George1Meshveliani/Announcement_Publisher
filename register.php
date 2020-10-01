@@ -122,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
-
+<?php require_once "layout/header.php"  ?>
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>

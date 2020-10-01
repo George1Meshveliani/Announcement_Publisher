@@ -3,6 +3,7 @@
 
 require_once "server/userData.php";
 require_once "server/config.php";
+
 //This page is ready to give user opportunity to make announcements and publish it to homepage
 session_start();
 // check if user is logged in
@@ -40,10 +41,6 @@ $current_user = array_values(array_filter($current_user));
   <h1>announcenment page</h1>
   <h6>Hello, <?php echo $current_user[0]["fullname"]  ?>
     You can create and publich an announcement here</h6>
-
-   
-  </div>
-
 
 </main>
 

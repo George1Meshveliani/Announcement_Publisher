@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once "server/config.php";
+
 $id = "";
 if (isset($_COOKIE["PHTARM"])) {
   $id = $_COOKIE["PHTARM"];
@@ -40,31 +41,19 @@ $userRow = mysqli_fetch_array($result);
         <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
         <a href="editProfile.php" class="card-link">edit</a>
       </section>
-      <section class="rounded ann-container">
-        <h4>my announcenments</h4>
-        <a href="addAnnConfig.php">add new</a>
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">saxeli gvari</h6>
-            <p class="card-text">gancxadebis shinaarsi</p>
-            <a href="#" class="card-link">edit</a>
-            <a href="#" class="card-link">delete</a>
-          </div>
-        </div>
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">saxeli gvari</h6>
-            <p class="card-text">gancxadebis shinaarsi</p>
-            <a href="#" class="card-link">edit</a>
-            <a href="#" class="card-link">delete</a>
-          </div>
-        </div>
+      <section>
+      <form action="upload.php" method="post" enctype="multipart/form-data">
+            Select image to upload:
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="submit" value="Upload Image" name="submit">
+          </form>
       </section>
+    
     </div>
   </main>
-  <?php require_once "layout/footer.php" ?>
+  <?php require_once "pubs.php" ?>
+ 
 </body>
+
 
 </html>

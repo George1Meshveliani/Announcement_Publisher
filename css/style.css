@@ -157,16 +157,18 @@ button {
 
 /* PROFILE */
 .profile-container {
-  width: 100%;
+  width: 600px;
+  margin-right: 200px;
   padding: 5px;
   overflow: hidden;
+  margin: 0 auto;
+  margin-top: 60px;
 }
 .profile {
   background-color: rgba(224, 241, 245, 0.4);
   border-radius: 12px;
-  float: left;
-  margin-right: 5%;
-  padding: 10px;
+  margin: 0 auto;
+  padding: 7px;
   box-shadow: 1px 2px 9px -1px rgba(0, 0, 0, 0.75);
   width: 35%;
   text-align: center;
@@ -183,6 +185,7 @@ button {
 /* card */
 .card-body {
   background-color: rgba(220, 236, 240, 0.7);
+  margin: 0 auto;
 }
 .card-body a {
   color: blue;

@@ -1,5 +1,4 @@
 <?php
-// Include config file
 require_once "server/config.php";
 // Define variables and initialize with empty values
 $username = $fullname = $email = $password = $confirm_password = "";
@@ -119,10 +118,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_close($link);
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-<?php require_once "layout/header.php"  ?>
+
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
@@ -134,7 +132,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <?php require_once 'layout/header.php'; ?>
     <main class="main-container">
-
         <div class="wrapper">
             <div class="form-title">
                 <h2>Sign Up</h2>
@@ -169,7 +166,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
         </div>
     </main>
-    <?php require_once "layout/footer.php" ?>
 </body>
 
 </html>

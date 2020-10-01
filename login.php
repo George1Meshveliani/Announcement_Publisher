@@ -1,49 +1,36 @@
 <?php
-
-
-// Initialize the session
 session_start();
-
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     header("location: index.php");
     exit;
 }
-
-// Include config file
 require_once "server/config.php";
-
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = "";
-
 // Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
     // Check if username is empty
     if (empty(trim($_POST["username"]))) {
         $username_err = "Please enter username.";
     } else {
         $username = trim($_POST["username"]);
     }
-
     // Check if password is empty
     if (empty(trim($_POST["password"]))) {
         $password_err = "Please enter your password.";
     } else {
         $password = trim($_POST["password"]);
     }
-
     // Validate credentials
     if (empty($username_err) && empty($password_err)) {
         // Prepare a select statement
         $sql = "SELECT id, username, password FROM users WHERE username = ? OR email = ?;";
-
         if ($stmt = mysqli_prepare($link, $sql)) {
             // Bind variables to the prepared statement as parameters
             // Set parameters
             mysqli_stmt_bind_param($stmt, "ss", $username, $username);
-
             // Attempt to execute the prepared statement
             if (mysqli_stmt_execute($stmt)) {
                 // Store result
@@ -56,7 +43,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         if (password_verify($password, $hashed_password)) {
                             // Password is correct, so start a new session
                             session_start();
-
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
@@ -83,12 +69,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
             }
-
             // Close statement
             mysqli_stmt_close($stmt);
         }
     }
-
     // Close connection
     mysqli_close($link);
 }
@@ -108,7 +92,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <?php require_once 'layout/header.php'; ?>
     <main class="main-container">
-
         <div class="wrapper">
             <div class="form-title">
                 <h2>Login</h2>
@@ -134,7 +117,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
         </div>
     </main>
-    <?php require_once "layout/footer.php" ?>
 </body>
 
 </html>

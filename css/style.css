@@ -49,14 +49,38 @@ body {
   /* text-align: center; */
   align-items: center;
 }
-
+/* TABLE */
 .wrapper {
   background-color: rgba(30, 143, 255, 0.438);
   width: 500px;
   margin: 50px auto;
   border-radius: 12px;
+  padding: 30px;
+}
+.wraper-table {
+  width: 850px;
+}
+.wraper-profile {
+  width: 68%;
+  margin: auto;
+  float: right;
+}
+/* PROFILE */
+.page-header {
+  background-color: rgba(220, 236, 240, 0.7);
+  border-radius: 12px;
+  width: 30%;
+  margin: auto;
+  float: left;
 }
 
+.page-header h2 {
+  margin-top: 0px;
+}
+
+table tr td:last-child a {
+  margin-right: 15px;
+}
 /* NAVBAR */
 #header {
   overflow: hidden;
@@ -92,6 +116,7 @@ body {
 .main-container {
   width: 90%;
   margin: 80px auto 0;
+  overflow: hidden;
 }
 
 /* FORM */
@@ -103,10 +128,6 @@ body {
 
 .form-title {
   text-align: center;
-}
-.page-header {
-  background-color: rgba(220, 236, 240, 0.7);
-  border-radius: 12px;
 }
 
 form:before {
@@ -155,33 +176,6 @@ button {
   border: none;
 }
 
-/* PROFILE */
-.profile-container {
-  width: 600px;
-  margin-right: 200px;
-  padding: 5px;
-  overflow: hidden;
-  margin: 0 auto;
-  margin-top: 60px;
-}
-.profile {
-  background-color: rgba(224, 241, 245, 0.4);
-  border-radius: 12px;
-  margin: 0 auto;
-  padding: 7px;
-  box-shadow: 1px 2px 9px -1px rgba(0, 0, 0, 0.75);
-  width: 35%;
-  text-align: center;
-}
-.ann-container {
-  background-color: rgba(224, 241, 245, 0.4);
-  border-radius: 12px;
-  float: right;
-  padding: 10px;
-  box-shadow: 1px 2px 9px -1px rgba(0, 0, 0, 0.75);
-  width: 60%;
-  text-align: center;
-}
 /* card */
 .card-body {
   background-color: rgba(220, 236, 240, 0.7);

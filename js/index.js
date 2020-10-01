@@ -28,3 +28,7 @@ if (newUsernameInput) {
 function setColor(input, color, time) {
   setTimeout(() => (input.style.color = color), time);
 }
+
+$(document).ready(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});

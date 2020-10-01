@@ -1,17 +1,13 @@
 <?php
 session_start();
-require_once "CRUD/config.php";
+require_once "server/config.php";
 
 $id = "";
 if (isset($_COOKIE["PHTARM"])) {
-  $id = $_COOKIE["PHTARM"];
+    $id = $_COOKIE["PHTARM"];
 } else if (isset($_SESSION["id"])) {
-  $id = $_SESSION["id"];
+    $id = $_SESSION["id"];
 }
-// get currently logged user from mysql with session or cookie 
-$res = "SELECT * FROM employees WHERE id = "  . $id;
-$result = mysqli_query($link, $res);
-$row = mysqli_fetch_array($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,82 +15,76 @@ $row = mysqli_fetch_array($result);
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="css/HeaderDesign.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+    <script src="js/index.js" defer></script>
 </head>
 
 <body>
-<?php require_once "pubs.php" ?>
     <?php require_once 'layout/header.php'; ?>
     <main class="main-container">
-        <div class="card-columns">
-            <div class="card rounded p-2">
-                <div class="card-header">
-                    Title
-                </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p><?php echo $row["name"] ?>.</p>
-                        <footer class="blockquote-footer">Contact info
-                        </footer>
-                    </blockquote>
-                </div>
-            </div>
-            <div class="card rounded p-2">
-                <div class="card-header">
-                    Title
-                </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                        <footer class="blockquote-footer">Contact info
-                        </footer>
-                    </blockquote>
-                </div>
-            </div>
-            <div class="card rounded p-2">
-                <div class="card-header">
-                    Title
-                </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                        <footer class="blockquote-footer">Contact info
-                        </footer>
-                    </blockquote>
-                </div>
-            </div>
-            <div class="card rounded p-2">
-                <div class="card-header">
-                    Title
-                </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                        <footer class="blockquote-footer">Contact info
-                        </footer>
-                    </blockquote>
-                </div>
-            </div>
-            <div class="card rounded p-2">
-                <div class="card-header">
-                    Title
-                </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                        <footer class="blockquote-footer">Contact info
-                        </footer>
-                    </blockquote>
+        <div class="wrapper wraper-table">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="clearfix">
+                            <h2 class="pull-left">Publication</h2>
+                            <a href="create.php" class="btn btn-success pull-right">Add New </a>
+                        </div>
+                        <?php
+                        // Attempt select query execution
+                        $sql = "SELECT * FROM employees";
+                        if ($result = mysqli_query($link, $sql)) {
+                            if (mysqli_num_rows($result) > 0) {
+                                echo "<table class='table table-bordered table-striped'>";
+                                echo "<thead>";
+                                echo "<tr>";
+                                echo "<th>Name</th>";
+                                echo "<th>Announcement</th>";
+                                echo "<th>Salary</th>";
+                                echo "<th>Action</th>";
+                                echo "</tr>";
+                                echo "</thead>";
+                                echo "<tbody>";
+                                while ($row = mysqli_fetch_array($result)) {
+                                    echo "<tr>";
+                                    echo "<td>" . $row['name'] . "</td>";
+                                    echo "<td>" . $row['address'] . "</td>";
+                                    echo "<td>" . $row['salary'] . "</td>";
+                                    // show update and delete buttons only for announcenments author
+                                    if ($_SESSION["id"] == $row["id"] || $_COOKIE["PHTARM"] == $row["id"]) {
+                                        echo "<td>";
+                                        echo "<a href='read.php?id=" . $row['user_id'] . "' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
+                                        echo "<a href='update.php?id=" . $row['user_id'] . "' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
+                                        echo "<a href='delete.php?id=" . $row['user_id'] . "' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
+                                        echo "</td>";
+                                    } else {
+                                        echo "<td>";
+                                        echo "<a href='read.php?id=" . $row['user_id'] . "' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
+                                        echo "</td>";
+                                    }
+                                    echo "</tr>";
+                                }
+                                echo "</tbody>";
+                                echo "</table>";
+                                // Free result set
+                                mysqli_free_result($result);
+                            } else {
+                                echo "<p class='lead'><em>No records were found.</em></p>";
+                            }
+                        } else {
+                            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                        }
+                        // Close connection
+                        mysqli_close($link);
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
-    <?php require_once "layout/footer.php" ?>
 </body>
 
 </html>

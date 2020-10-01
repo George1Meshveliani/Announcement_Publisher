@@ -1,8 +1,8 @@
 <?php
 /* Change it by your parametares */
 define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'george1');
-define('DB_PASSWORD', 'passWW123!aaaddd');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', 'Anri1992!');
 define('DB_NAME', 'userregistration');
 
 /* Attempt to connect to MySQL database */

@@ -39,7 +39,7 @@ $userRow = mysqli_fetch_array($result);
         <h5>Name: <?php echo $userRow["username"]  ?></h5>
         <h5>Fullname: <?php echo $userRow["fullname"]  ?></h5>
         <h5>E-mail: <?php echo $userRow["email"]  ?></h5>
-        <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
+        <a href="reset-password.php" class="btn btn-warning">Edit profile</a>
         <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
         <!-- <form action="upload.php" method="post" enctype="multipart/form-data">
           Select image to upload:

@@ -1,13 +1,6 @@
 <?php
 session_start();
 require_once "server/config.php";
-
-$id = "";
-if (isset($_COOKIE["PHTARM"])) {
-    $id = $_COOKIE["PHTARM"];
-} else if (isset($_SESSION["id"])) {
-    $id = $_SESSION["id"];
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">

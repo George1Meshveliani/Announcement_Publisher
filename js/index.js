@@ -1,12 +1,10 @@
 let match = false;
 let userData = [];
-fetch('server/data.php')
+fetch('http://localhost/announcement/Announcement_Publisher/server/data.php')
   .then(res => res.json())
   .then(data => userData.push(data));
-
 const nameInput = document.getElementById('name');
 const newUsernameInput = document.getElementById('newUser');
-
 // check if username exist in login form
 if (nameInput) {
   nameInput.addEventListener('input', e => {
@@ -14,7 +12,6 @@ if (nameInput) {
     match ? setColor(nameInput, 'green', 500) : setColor(nameInput, 'red', 500);
   });
 }
-
 // check if username exist in register form
 if (newUsernameInput) {
   newUsernameInput.addEventListener('input', e => {
@@ -38,7 +35,3 @@ function myFunction() {
     nav.className = 'navbar sticky-top topnav';
   }
 }
-// jquery
-$(document).ready(function () {
-  $('[data-toggle="tooltip"]').tooltip();
-});

@@ -1,14 +1,23 @@
 <?php
-/* Change it by your parametares */
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'Anri1992!');
-define('DB_NAME', 'userregistration');
+$host = 'localhost';
+$dbname = 'userregistration';
+$user = 'root';
+$password = 'Anri1992!';
+$charset = 'utf8mb4';
+// Set DSN
+$dsn = "mysql:host=" . $host . ";dbname=" . $dbname;
+// PDO atributes
+$options = [
+    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::ATTR_EMULATE_PREPARES   => false,
+];
 
-/* Attempt to connect to MySQL database */
-$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-
-// Check connection
-if ($link === false) {
-    die("ERROR: Could not connect. " . mysqli_connect_error());
+try {
+    // Create PDO instance
+    $pdo = new PDO($dsn, $user, $password, $options);
+} catch (PDOException $e) {
+    // throw new PDOException($e->getMessage(), $e->getCode());
+    echo "Connection failed: " . $e->getMessage() . "<br>";
+    echo $e->getCode();
 }

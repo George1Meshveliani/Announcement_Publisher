@@ -2,21 +2,19 @@
   <nav class="navbar sticky-top topnav" id="header">
     <?php
     session_start();
-    if (isset($_SESSION["loggedin"])  || isset($_COOKIE["PHTARM"])) {
-      echo ' <a href="index.php">Home</a>
+    if (isset($_SESSION["id"])  || isset($_COOKIE["PHTARM"])) {
+      echo ' <a href="http://localhost/announcement/Announcement_Publisher/index.php/">Home</a>
             <div class="navbar-right">
-              <a href="create.php">Add announcenment</a>
-              <a class="active" href="profile.php">Profile</a>
-              <a href="logout.php">Logout</a>
-              <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+              <a href="http://localhost/announcement/Announcement_Publisher/index.php/create">Add announcenment</a>
+              <a class="active" href="http://localhost/announcement/Announcement_Publisher/index.php/profile">Profile</a>
+              <a href="http://localhost/announcement/Announcement_Publisher/index.php/logout">Logout</a>
             </div>';
     } else {
-      echo '<a href="index.php">Home</a>
+      echo '<a href="http://localhost/announcement/Announcement_Publisher/index.php/">Home</a>
            <div class="navbar-right">
-            <a href="create.php">Add announcenment</a>
-            <a href="login.php">LogIn</a>
-            <a href="register.php">Signup</a>
-            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+            <a href="http://localhost/announcement/Announcement_Publisher/index.php/create">Add announcenment</a>
+            <a href="http://localhost/announcement/Announcement_Publisher/index.php/login">LogIn</a>
+            <a href="http://localhost/announcement/Announcement_Publisher/index.php/register">Signup</a>
            </div>';
     };
     ?>

@@ -6,6 +6,7 @@ if (isset($_COOKIE["PHTARM"])) {
 } elseif (!isset($_SESSION["id"])) {
   header("Location:login.php");
 }
+//comment for branch test
 // get currently logged user from mysql with session or cookie 
 $res = "SELECT * FROM users WHERE id=" . $id;
 $result = mysqli_query($link, $res);

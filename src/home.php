@@ -42,7 +42,6 @@ function getHomePage(){
                         require_once "server/config.php";
                             $stmt = $pdo->query("SELECT * FROM employees");
                             $dataCount = $stmt->rowCount();
-                           
                             if (count($dataCount) > 0) {
                                 echo "<table class='table table-bordered table-striped'>";
                                 echo "<thead>";

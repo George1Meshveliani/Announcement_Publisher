@@ -1,4 +1,8 @@
 <?php
+
+function editProfile(){
+    
+}
 session_start();
 require_once "server/config.php";
 $id = "";
@@ -77,8 +81,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Edit</title>
     <link rel="icon" type="image/png" href="https://freepngimg.com/download/newspaper/6-2-newspaper-png-clipart.png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/index.js" defer></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/index.js" defer></script>
 </head>
 
 <body>

@@ -29,7 +29,7 @@ function createAnnouncenment(){
 ?>
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
   <meta charset="UTF-8">
   <title>Create</title>
@@ -53,7 +53,7 @@ function createAnnouncenment(){
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
               <div class="form-group">
                 <label>Title</label>
-                <input type="text" name="name" class="form-control" >
+                <input type="text" name="name" class="form-control" autocomplete="off">
               </div>
               <div class="form-group">
                 <label>Announcement</label>
@@ -61,7 +61,7 @@ function createAnnouncenment(){
               </div>
               <div class="form-group">
                 <label>Salary</label>
-                <input type="text" name="salary" class="form-control" >
+                <input type="text" name="salary" class="form-control" autocomplete="off">
               </div>
               <input type="submit" class="btn btn-primary" value="Submit" name="submit">
               <a href="http://localhost/announcement/Announcement_Publisher/index.php/profile" class="btn btn-default">Cancel</a>

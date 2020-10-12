@@ -7,16 +7,19 @@ require_once 'lib/routing.php';
 
 // print_r($_SERVER);
 $id = explode("/", $_SERVER['PATH_INFO']);
-// print_r($id);
 // Register routes.
 registerRoute('/', 'home:getHomePage');
 registerRoute('/register', 'register:registerUser');
 registerRoute('/login', 'login:loginUser');
 registerRoute('/read' . '/' . $id[2], 'read:readInfo');
 registerRoute('/update' . '/' . $id[2], 'update:updateData');
-registerRoute('/update' . '/' . $id[2], 'delete:deleteData');
+registerRoute('/delete' . '/' . $id[2], 'delete:deleteData');
 registerRoute('/logout', 'logout:logoutUser');
 registerRoute('/create', 'create:createAnnouncenment');
+registerRoute('/profile', 'profile:showProfile');
+registerRoute('/edit', 'edit_profile:editProfile');
+
+
 
 
 // Execute the function on the path.

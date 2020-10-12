@@ -1,33 +1,12 @@
 <?php
-require_once "server/config.php";
-// Process delete operation after confirmation
-if (isset($_POST["id"]) && !empty($_POST["id"])) {
-    // Prepare a delete statement
-    $sql = "DELETE FROM employees WHERE user_id = ?";
-    if ($stmt = mysqli_prepare($link, $sql)) {
-        // Bind variables to the prepared statement as parameters
-        mysqli_stmt_bind_param($stmt, "i", $param_id);
-        // Set parameters
-        $param_id = trim($_POST["id"]);
-        // Attempt to execute the prepared statement
-        if (mysqli_stmt_execute($stmt)) {
-            // Records deleted successfully. Redirect to landing page
-            header("location: index.php");
-            exit();
-        } else {
-            echo "Oops! Something went wrong. Please try again later.";
-        }
-    }
-    // Close statement
-    mysqli_stmt_close($stmt);
-    // Close connection
-    mysqli_close($link);
-} else {
-    // Check existence of id parameter
-    if (empty(trim($_GET["id"]))) {
-        // URL doesn't contain id parameter. Redirect to error page
-        header("location: server/error.php");
-        exit();
+function deleteData(){
+    require_once "server/config.php";
+    if(isset($_POST["submit"])){
+        $id = explode("/", $_SERVER['PATH_INFO']);
+        $sql = "DELETE FROM employees WHERE user_id = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$id[2]]);
+        header("Location:http://localhost/announcement/Announcement_Publisher/index.php/");
     }
 }
 ?>
@@ -39,8 +18,8 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
     <title>View Record</title>
     <link rel="icon" type="image/png" href="https://freepngimg.com/download/newspaper/6-2-newspaper-png-clipart.png" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/index.js" defer></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/index.js" defer></script>
 
 </head>
 
@@ -54,11 +33,10 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                     </div>
                     <form method="post">
                         <div class="alert alert-danger fade in">
-                            <input type="hidden" name="id" value="<?php echo trim($_GET["id"]); ?>" />
                             <p>Are you sure you want to delete this record?</p><br>
                             <p>
-                                <input type="submit" value="Yes" class="btn btn-danger">
-                                <a href="index.php" class="btn btn-default">No</a>
+                                <input type="submit" value="Yes" class="btn btn-danger" name="submit">
+                                <a href="http://localhost/announcement/Announcement_Publisher/index.php/" class="btn btn-default">No</a>
                             </p>
                         </div>
                     </form>

@@ -19,8 +19,7 @@ function registerRoute($path, $function) {
   
       $pathArray = explode(':', $path);
       if(count($pathArray) > 1) {
-        $pathInfo = $_SERVER['PATH_INFO'];
-        $pathInfoArray = explode("/", $pathInfo);
+        $pathInfoArray = explode("/", $path);
         // print_r($pathInfo);
         if(count($pathInfoArray) > 2) {
           $routes[$path] = [
@@ -52,6 +51,7 @@ function registerRoute($path, $function) {
     // Check if this path is registered in the router.
     if (!isset($routes[$path])) {
       echo "No route registered for path: " . $path;
+      // header("Location:http://localhost/announcement/Announcement_Publisher/index.php/");
       exit(1);
     }
     

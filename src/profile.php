@@ -3,7 +3,9 @@ session_start();
 
 function showProfile(){
   // check if user is logged in
-  if(!isset($_COOKIE["PHTARM"]) || !isset($_SESSION["id"])){
+  if(isset($_COOKIE["PHTARM"])){
+
+  }elseif(!isset($_SESSION["id"])){
     header("Location:http://localhost/announcement/Announcement_Publisher/index.php/");
   }
 }
@@ -60,7 +62,7 @@ $userRow = $stmt->fetch();
             <div class="col-md-12">
               <div class="clearfix">
                 <h2 class="pull-left">Publication</h2>
-                <a href="create.php" class="btn btn-success pull-right">Add New </a>
+                <a href="http://localhost/announcement/Announcement_Publisher/index.php/create" class="btn btn-success pull-right">Add New </a>
               </div>
               <?php
               // Include config file

@@ -18,9 +18,7 @@ registerRoute('/logout', 'logout:logoutUser');
 registerRoute('/create', 'create:createAnnouncenment');
 registerRoute('/profile', 'profile:showProfile');
 registerRoute('/edit', 'edit_profile:editProfile');
-
-
-
+registerRoute('/error', 'error:showError');
 
 // Execute the function on the path.
 executeRoute($_SERVER['PATH_INFO']);

@@ -51,7 +51,8 @@ function registerRoute($path, $function) {
     // Check if this path is registered in the router.
     if (!isset($routes[$path])) {
       echo "No route registered for path: " . $path;
-      // header("Location:http://localhost/announcement/Announcement_Publisher/index.php/");
+      // if path is not registered show error
+      header("Location:http://localhost/announcement/Announcement_Publisher/index.php/error");
       exit(1);
     }
     

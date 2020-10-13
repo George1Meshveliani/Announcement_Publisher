@@ -49,7 +49,7 @@ $data = readInfo();
                             <label>Salary</label>
                             <p class="form-control-static"><?php  echo $data["salary"] ?></p>
                         </div>
-                        <p><a href="http://localhost/announcement/Announcement_Publisher/index.php/profile" class="btn btn-primary">Back</a></p>
+                        <p><a href="http://localhost/announcement/Announcement_Publisher/index.php/" class="btn btn-primary">Back</a></p>
                     </div>
                 </div>
             </div>

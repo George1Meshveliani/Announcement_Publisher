@@ -6,14 +6,14 @@
 require_once 'lib/routing.php';
 
 // print_r($_SERVER);
-$id = explode("/", $_SERVER['PATH_INFO']);
+// $id = explode("/", $_SERVER['PATH_INFO']);
 // Register routes.
 registerRoute('/', 'home:getHomePage');
 registerRoute('/register', 'register:registerUser');
 registerRoute('/login', 'login:loginUser');
-registerRoute('/read' . '/' . $id[2], 'read:readInfo');
-registerRoute('/update' . '/' . $id[2], 'update:updateData');
-registerRoute('/delete' . '/' . $id[2], 'delete:deleteData');
+registerRoute('/read/{id}', 'read:readInfo');
+registerRoute('/update/{id}', 'update:updateData');
+registerRoute('/delete/{id}', 'delete:deleteData');
 registerRoute('/logout', 'logout:logoutUser');
 registerRoute('/create', 'create:createAnnouncenment');
 registerRoute('/profile', 'profile:showProfile');

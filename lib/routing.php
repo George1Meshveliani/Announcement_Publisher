@@ -12,16 +12,43 @@ $routes=[];
  * @param $path
  * @param $function
  */
-function registerRoute($path, $function) {
+// function registerRoute($path, $function) {
+//     global $routes;
+//     if (!isset($routes[$path])) {
+//       $method = explode(':', $function);
+  
+//       $pathArray = explode(':', $path);
+//       if(count($pathArray) > 1) {
+//         $pathInfoArray = explode("/", $path);
+//         // print_r($pathInfo);
+//         if(count($pathInfoArray) > 2) {
+//           $routes[$path] = [
+//             'file_name' => $method[0] . '.php',
+//             'function_name' => $method[1],
+//             'param' => $pathInfoArray[2]
+//           ];
+//         }
+//       } else {
+//         $routes[$path] = [
+//           'file_name' => $method[0] . '.php',
+//           'function_name' => $method[1],
+//         ];
+//       }
+//     }
+//     // print_r($routes);
+ 
+//     return $routes;
+//   }
+  function registerRoute($path, $function) {
     global $routes;
     if (!isset($routes[$path])) {
       $method = explode(':', $function);
   
-      $pathArray = explode(':', $path);
-      if(count($pathArray) > 1) {
-        $pathInfoArray = explode("/", $path);
-        // print_r($pathInfo);
-        if(count($pathInfoArray) > 2) {
+      $pathArray = explode('/', $path);
+      if(count($pathArray) === 3) {
+        $pathInfoArray = explode("/", $_SERVER['PATH_INFO']);
+        if(count($pathArray) === 3) {
+          $path ="/". $pathArray[1] . "/" . $pathInfoArray[2];
           $routes[$path] = [
             'file_name' => $method[0] . '.php',
             'function_name' => $method[1],
@@ -30,16 +57,15 @@ function registerRoute($path, $function) {
         }
       } else {
         $routes[$path] = [
-          'file_name' => $method[0] . '.php',
-          'function_name' => $method[1],
+            'file_name' => $method[0] . '.php',
+            'function_name' => $method[1],
         ];
       }
+  
     }
-    // print_r($routes);
- 
+  
     return $routes;
   }
-  
   /**
    * Execute function based on its registered route.
    * @param $path

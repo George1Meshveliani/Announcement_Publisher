@@ -1,0 +1,12 @@
+//Since .htaccess is hiden file you can read speaclial configuration method here, for 
+simple rewrite way. Thank you can creat your own one.
+//////////////////////////////////////////////
+RewriteEngine On
+
+RewriteRule ^profile?$ profile.php
+RewriteRule ^create?$ create.php
+RewriteRule ^read?$ read.php
+RewriteRule ^register?$ register.php
+RewriteRule ^update?$ update.php
+RewriteRule ^upload?$ upload.php
+///////////////////////////////////////////////////
